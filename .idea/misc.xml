@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/drawable-v24/rounded_corner.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/drawable/bordes_redondos.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/drawable/shape.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/font/aclonica.xml" value="0.387037037037037" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/font/coda.xml" value="0.39487179487179486" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/font/paytone_one.xml" value="0.20185185185185187" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/font/poller_one.xml" value="0.20185185185185187" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/font/poppins_light.xml" value="0.20185185185185187" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.3578125" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout-w936dp/activity_login.xml" value="0.275" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_appointments.xml" value="0.33" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_apreport.xml" value="0.33" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_card_payment.xml" value="0.37083333333333335" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_main.xml" value="0.3048211508553655" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_menu.xml" value="0.33" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_mhreport.xml" value="0.36512820512820515" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_recipes.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_request_mh.xml" value="0.2" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_schedule_appointment.xml" value="0.37083333333333335" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_signup.xml" value="0.33" />
+        <entry key="..\:/Users/Stevens/AndroidStudioProjects/ClinicApp/app/src/main/res/layout/activity_terms_conditions.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
