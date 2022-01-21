@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".MainActivity" >
+
+    <ImageView
+        android:id="@+id/VectorHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/vector_home" />
+
+    <LinearLayout
+        android:id="@+id/titleIcon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:textColor="#FFFFFF"
+            android:textSize="45sp"
+            tools:text="Clínica\nUniversitaria" />
+        <ImageView
+            android:id="@+id/clinicIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/clinic_icon" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ImgDoctor"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@id/titleIcon"
+        android:scaleType="fitXY"
+        android:src="@drawable/doctor" />
+
+    <ImageView
+        android:id="@+id/Estetoscopio"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="35dp"
+        app:srcCompat="@drawable/estetoscopio" />
+
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ImgDoctor"
+        android:layout_alignParentBottom="true"
+        android:gravity="center_vertical|end"
+        android:orientation="vertical"
+        android:paddingRight="20dp">
+
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="200sp"
+            android:layout_height="55sp"
+            android:backgroundTint="#1B6A85"
+            app:cornerRadius="20dp"
+            tools:text="Iniciar Sesión" />
+
+        <Button
+            android:id="@+id/btnSignup"
+            android:layout_width="200sp"
+            android:layout_height="55sp"
+            android:backgroundTint="#1B6A85"
+            app:cornerRadius="20dp"
+            tools:text="Registrate" />
+    </LinearLayout>
+
+
+</RelativeLayout>
