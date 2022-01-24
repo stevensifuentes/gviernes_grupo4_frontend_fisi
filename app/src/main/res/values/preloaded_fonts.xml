@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/aclonica</item>
+        <item>@font/coda</item>
+        <item>@font/paytone_one</item>
+        <item>@font/poller_one</item>
+        <item>@font/poppins_light</item>
+    </array>
+</resources>

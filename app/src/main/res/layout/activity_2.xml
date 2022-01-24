@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="146dp"
+            android:layout_height="309dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
+            app:srcCompat="@drawable/fondopago" />
+
+        <ImageButton
+            android:id="@+id/bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#FFFFFF"
+            android:src="@drawable/flecha" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="245dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:fontFamily="@font/aclonica"
+            android:text="¡Pago realizado con éxito!"
+            android:textColor="#0C0C0C"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView4"
+            android:fontFamily="@font/coda"
+            android:text="Paciente"
+            android:layout_centerHorizontal="true"
+            android:textColor="#7C7676"
+            android:textSize="20sp" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/textView7"
+            android:text="Cody Fisher" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/autoCompleteTextView"
+            android:fontFamily="@font/coda"
+            android:text="Correo Electronico"
+            android:layout_centerHorizontal="true"
+            android:textColor="#7C7676"
+            android:textSize="20sp" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView8"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_light"
+            android:text="cody.fisher@unmsm.edu.pe" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/autoCompleteTextView2"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/coda"
+            android:text="ID"
+            android:textColor="#7C7676"
+            android:textSize="20sp" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView9"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/poppins_light"
+            android:text="222" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/autoCompleteTextView3"
+            android:layout_marginStart="100dp"
+            android:fontFamily="@font/coda"
+            android:text="Fecha"
+            android:textColor="#7C7676"
+            android:textSize="20sp" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView10"
+            android:layout_marginStart="80dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="20/04/2020" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/autoCompleteTextView3"
+            android:layout_marginStart="70dp"
+            android:layout_toRightOf="@id/autoCompleteTextView4"
+            android:fontFamily="@font/coda"
+            android:text="Codigo"
+            android:textColor="#7C7676"
+            android:textSize="20sp" />
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView11"
+            android:layout_marginStart="60dp"
+            android:layout_toRightOf="@id/autoCompleteTextView4"
+            android:fontFamily="@font/poppins_light"
+            android:text="18200178" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/autoCompleteTextView4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/qr" />
+
+        <ImageView
+            android:id="@+id/esteto"
+            android:layout_width="91dp"
+            android:layout_height="102dp"
+            android:layout_below="@id/imageView3"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="18dp"
+            app:srcCompat="@drawable/estetoscopio" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="105dp"
+            android:layout_height="282dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginRight="0dp"
+            app:srcCompat="@drawable/fondopago2" />
+
+        <ImageView
+            android:id="@+id/linea"
+            android:layout_width="136dp"
+            android:layout_height="44dp"
+            android:layout_below="@id/esteto"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-2dp"
+            app:srcCompat="@drawable/linea" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

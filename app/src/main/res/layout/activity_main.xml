@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#67ADC4"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-146dp">
+
+        <ImageView
+            android:id="@+id/imagen"
+            android:layout_width="match_parent"
+            android:layout_height="151dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="-2dp"
+            android:layout_marginRight="0dp"
+            app:srcCompat="@drawable/estetos" />
+
+        <ImageButton
+            android:id="@+id/bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#FFFFFF"
+            android:src="@drawable/flecha" />
+
+        <ImageView
+            android:id="@+id/blanco1"
+            android:layout_width="318dp"
+            android:layout_height="47dp"
+            android:layout_below="@id/imagen"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@drawable/blanco2" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imagen"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="55dp"
+            app:srcCompat="@drawable/tarjeta1" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imagen"
+            android:layout_marginStart="275dp"
+            android:layout_marginTop="60dp"
+            app:srcCompat="@drawable/tarjeta2" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imagen"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="60dp"
+            android:layout_toRightOf="@id/imageView7"
+            android:fontFamily="@font/coda"
+            android:text="4444 3333 2222 1111"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/blanco2"
+            android:layout_width="155dp"
+            android:layout_height="43dp"
+            android:layout_below="@id/blanco1"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/blancomitad" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blanco1"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/fecha" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blanco1"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/imageView7"
+            android:fontFamily="@font/coda"
+            android:text="05/26"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/blanco3"
+            android:layout_width="159dp"
+            android:layout_height="44dp"
+            android:layout_below="@id/blanco1"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="-6dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/blanco2"
+            app:srcCompat="@drawable/blancomitad" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blanco1"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/blanco2"
+            app:srcCompat="@drawable/cvv" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blanco1"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/imageView10"
+            android:fontFamily="@font/coda"
+            android:text="444"
+            android:textSize="16sp" />
+        <ImageView
+            android:id="@+id/blanco4"
+            android:layout_width="155dp"
+            android:layout_height="43dp"
+            android:layout_below="@id/blanco2"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/blancomitad" />
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blanco2"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/nombre" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blanco2"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/imageView7"
+            android:fontFamily="@font/coda"
+            android:text="Cody"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/blanco5"
+            android:layout_width="159dp"
+            android:layout_height="44dp"
+            android:layout_below="@id/blanco2"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="-6dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/blanco2"
+            app:srcCompat="@drawable/blancomitad" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blanco2"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/blanco2"
+            app:srcCompat="@drawable/nombre" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blanco2"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/imageView10"
+            android:fontFamily="@font/coda"
+            android:text="Fisher"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/blanco6"
+            android:layout_width="318dp"
+            android:layout_height="47dp"
+            android:layout_below="@id/blanco4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/blanco2" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blanco4"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="20dp"
+            app:srcCompat="@drawable/email" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/blanco4"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/imageView7"
+            android:fontFamily="@font/coda"
+            android:text="cody.fisher@unmsm.edu.pe"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/pagar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="23dp"
+            android:background="#FFFFFF"
+            app:srcCompat="@drawable/botonpagarf" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="35dp"
+            android:text="Pagar S/8.00"
+            android:textAlignment="center"
+            android:textColor="#EDECEC"
+            android:textSize="20sp" />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
