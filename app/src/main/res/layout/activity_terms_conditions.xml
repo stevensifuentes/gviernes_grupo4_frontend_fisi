@@ -26,6 +26,7 @@
         android:layout_marginRight="60dp"
         android:background="@drawable/bordes_redondos"
         android:text="Realizar Pago"
+        android:textSize="16dp"
         android:textColor="#FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

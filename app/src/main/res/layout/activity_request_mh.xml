@@ -40,14 +40,16 @@
         android:layout_marginLeft="60dp"
         android:layout_marginRight="60dp"
         android:background="@drawable/bordes_redondos"
-        android:text="Enivar solicitud"
+        android:text="Enviar solicitud"
         android:textColor="#FFFF"
+        android:textSize="16dp"
+        app:layout_constraintVertical_bias="0.759"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.759" />
+         />
 
     <LinearLayout
         android:id="@+id/lyNameHMEmail"
@@ -70,7 +72,7 @@
             android:background="@drawable/rounded_corner"
             android:drawableLeft="@android:drawable/ic_lock_idle_lock"
             android:ems="10"
-            android:hint="Contraseña"
+            android:hint="ID Historial Médico"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:padding="5dp"

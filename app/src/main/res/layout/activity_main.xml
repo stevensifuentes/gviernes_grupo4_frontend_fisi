@@ -62,31 +62,33 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon_clinic" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btnLogin"
         android:layout_width="241dp"
         android:layout_height="56dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="center"
+        android:background="@drawable/bordes_redondos"
+        android:text="Inicar Sesión"
+        android:textColor="#FFFF"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.888"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874"
-        app:srcCompat="@drawable/button_login" />
+        app:layout_constraintVertical_bias="0.874" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btnRegister"
-        android:layout_width="244dp"
-        android:layout_height="60dp"
+        android:layout_width="241dp"
+        android:layout_height="56dp"
+        android:background="@drawable/bordes_redondos"
+        android:text="Registrate"
+        android:textColor="#FFFF"
+        android:textSize="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/btn_signup" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

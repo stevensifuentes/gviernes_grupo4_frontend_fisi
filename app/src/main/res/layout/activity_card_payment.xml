@@ -234,7 +234,6 @@
             android:text="cody.fisher@unmsm.edu.pe"
             android:textSize="16sp" />
 
-
         <Button
             android:id="@+id/btnPagar"
             android:layout_width="220dp"
@@ -250,6 +249,7 @@
             android:background="@drawable/bordes_redondos"
             android:text="Pagar S/8.00"
             android:textColor="#FFFF"
+            android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"

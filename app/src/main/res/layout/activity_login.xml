@@ -18,20 +18,20 @@
         app:srcCompat="@drawable/vector_login"
         tools:ignore="ImageContrastCheck" />
 
-    <ImageButton
+    <Button
         android:id="@+id/btnLog"
         android:layout_width="241dp"
         android:layout_height="56dp"
-        android:backgroundTint="#00FFFFFF"
-        android:scaleType="center"
+        android:background="@drawable/bordes_redondos"
+        android:text="Iniciar Sesión"
+        android:textSize="16dp"
+        android:textColor="#FFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.905"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.94"
-        app:srcCompat="@drawable/button_login"
-        tools:ignore="SpeakableTextPresentCheck" />
+        app:layout_constraintVertical_bias="0.94" />
 
     <ImageView
         android:id="@+id/estetoscopio"

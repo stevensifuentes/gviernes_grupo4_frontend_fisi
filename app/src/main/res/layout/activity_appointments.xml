@@ -7,243 +7,13 @@
     tools:context=".Appointments">
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/barraMenuImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/nav_alone" />
-
-    <LinearLayout
-        android:id="@+id/container"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/imageView9"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vectorRegister3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/rectangle"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vectorRegister3">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:src="@drawable/odontologia" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:text="Odontología"
-                android:textAlignment="center" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vectorRegister3">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14/10/2020" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10:20 AM" />
-            </LinearLayout>
-
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:backgroundTint="#00FFFFFF"
-                android:scaleType="fitCenter"
-                android:src="@drawable/qr_date"
-                android:textAlignment="viewEnd" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/rectangle"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vectorRegister3">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:src="@drawable/odontologia" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:text="Odontología"
-                android:textAlignment="center" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vectorRegister3">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14/10/2020" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10:20 AM" />
-            </LinearLayout>
-
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:backgroundTint="#00FFFFFF"
-                android:scaleType="fitCenter"
-                android:src="@drawable/qr_date"
-                android:textAlignment="viewEnd" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/rectangle"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vectorRegister3">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:src="@drawable/odontologia" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:text="Odontología"
-                android:textAlignment="center" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vectorRegister3">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14/10/2020" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10:20 AM" />
-            </LinearLayout>
-
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:backgroundTint="#00FFFFFF"
-                android:scaleType="fitCenter"
-                android:src="@drawable/qr_date"
-                android:textAlignment="viewEnd" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/rectangle"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/vectorRegister3">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:src="@drawable/odontologia" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:text="Odontología"
-                android:textAlignment="center" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="15dp"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/vectorRegister3">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="14/10/2020" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="10:20 AM" />
-            </LinearLayout>
-
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:backgroundTint="#00FFFFFF"
-                android:scaleType="fitCenter"
-                android:src="@drawable/qr_date"
-                android:textAlignment="viewEnd" />
-        </LinearLayout>
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/lyOptions"
@@ -261,7 +31,8 @@
             android:layout_marginRight="35dp"
             android:layout_weight="1"
             android:backgroundTint="#00FFFFFF"
-            app:srcCompat="@drawable/menu_home" />
+            app:srcCompat="@drawable/menu_home"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/iconSearch"
@@ -292,7 +63,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/vectorRegister3"
+        android:id="@+id/vectorAppointment"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:scaleType="fitXY"
@@ -303,7 +74,7 @@
         app:srcCompat="@drawable/vector_login" />
 
     <TextView
-        android:id="@+id/titleSignup3"
+        android:id="@+id/titleAppointments"
         android:layout_width="359dp"
         android:layout_height="111dp"
         android:fontFamily="sans-serif-black"
@@ -330,7 +101,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/avatarAppointment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -340,7 +111,7 @@
         app:srcCompat="@drawable/avatar_" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/ballsImageView"
         android:layout_width="180dp"
         android:layout_height="86dp"
         android:rotation="90"
@@ -379,5 +150,17 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingVertical="8dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/barraMenuImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/vectorAppointment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
