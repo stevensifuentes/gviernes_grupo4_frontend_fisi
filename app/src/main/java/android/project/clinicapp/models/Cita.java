@@ -5,7 +5,6 @@ public class Cita {
     private String hora;
     private String fecha;
     private int disponible;
-    private String historial_id;
 
     // Constructur para Mostrar Cita por usuario
     public Cita(String especialidad, String hora, String fecha, int disponible) {
@@ -16,12 +15,12 @@ public class Cita {
     }
 
     // Constructor para Añadir Cita
-    public Cita(String especialidad, String hora, String fecha, String historial_id) {
+    /*public Cita(String especialidad, String hora, String fecha, String historial_id) {
         this.especialidad = especialidad;
         this.hora = hora;
         this.fecha = fecha;
         this.historial_id = historial_id;
-    }
+    }*/
 
     public String getEspecialidad() {
         return especialidad;
@@ -55,11 +54,4 @@ public class Cita {
         this.disponible = disponible;
     }
 
-    public String getHistorial_id() {
-        return historial_id;
-    }
-
-    public void setHistorial_id(String historial_id) {
-        this.historial_id = historial_id;
-    }
 }

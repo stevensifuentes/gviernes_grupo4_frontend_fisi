@@ -25,7 +25,7 @@
         app:srcCompat="@drawable/estetoscopio" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/barraMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-18dp"
@@ -34,7 +34,7 @@
         app:srcCompat="@drawable/nav_alone" />
 
     <Button
-        android:id="@+id/btnRealizarPago2"
+        android:id="@+id/btnEnviarSolicitud"
         android:layout_width="220dp"
         android:layout_height="48dp"
         android:layout_marginLeft="60dp"
@@ -65,7 +65,7 @@
         tools:ignore="MissingConstraints">
 
         <EditText
-            android:id="@+id/txtContraseña"
+            android:id="@+id/txtIDHistorialMedico"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
@@ -96,7 +96,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/vectorRegister2"
+        android:id="@+id/vectorRquesthm"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:scaleType="fitXY"
@@ -107,7 +107,7 @@
         app:srcCompat="@drawable/vector_login" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/avatarRequest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -130,7 +130,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/titleSignup2"
+        android:id="@+id/titleRequest"
         android:layout_width="360dp"
         android:layout_height="104dp"
         android:fontFamily="sans-serif-black"
@@ -145,7 +145,7 @@
         app:layout_constraintVertical_bias="0.088" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/ballsRequest"
         android:layout_width="84dp"
         android:layout_height="93dp"
         android:rotation="90"
@@ -153,7 +153,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/vectorRegister2"
+        app:layout_constraintTop_toTopOf="@+id/vectorRquesthm"
         app:layout_constraintVertical_bias="0.176"
         app:srcCompat="@drawable/three_balls" />
 
@@ -229,7 +229,6 @@
             android:textColor="#000000"
             android:textSize="24sp"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -275,7 +274,19 @@
             android:layout_weight="1"
             android:backgroundTint="#00FFFFFF"
             app:srcCompat="@drawable/profile" />
-
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/idLoadingPB"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/barraMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnEnviarSolicitud"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

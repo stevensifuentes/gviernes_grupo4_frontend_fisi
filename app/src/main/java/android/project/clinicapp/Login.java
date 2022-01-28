@@ -10,8 +10,8 @@ import android.widget.ImageButton;
 
 public class Login extends AppCompatActivity {
 
-    ImageButton btn_back, btn_log;
-    Button btn_signup;
+    ImageButton btn_back;
+    Button btn_signup, btn_log;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

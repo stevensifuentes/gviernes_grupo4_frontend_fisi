@@ -172,7 +172,7 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <EditText
-            android:id="@+id/txtContraseña"
+            android:id="@+id/txtIDHistorialMedico"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

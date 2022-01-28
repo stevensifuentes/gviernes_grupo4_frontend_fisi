@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.project.clinicapp.API.ClinicAPI;
 import android.project.clinicapp.models.Cita;
 import android.project.clinicapp.models.CitaResultado;
+import android.project.clinicapp.models.Rick;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
@@ -29,6 +30,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
     private static final String TAG = "CLINICA";
     private Retrofit retrofit;
+     //public static final String BASE_URL = "https://pokeapi.co/api/v2/";
+    public static final String BASE_URL = "https://rickandmortyapi.com/api/";
 
     private RecyclerView recyclerView;
     private ListaAdapter listaAdapter;
@@ -45,12 +48,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         retrofit = new Retrofit.Builder()
-                .baseUrl("https://pokeapi.co/api/v2/")
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create(
                         new GsonBuilder().serializeNulls().create()
                 ))
                 .build();
-        solicitarDatos();
+        solicitarData();
 
         back = findViewById(R.id.btnBackAp);
         back.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +65,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
         });
     }
 
-    public void solicitarDatos() {
+    public void solicitarData() {
         ClinicAPI service = retrofit.create(ClinicAPI.class);
         Call<CitaResultado> citaResultadoCall = service.findAppointments();
 
@@ -71,16 +74,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
             public void onResponse(Call<CitaResultado> call, Response<CitaResultado> response) {
                 if (response.isSuccessful()){
                     CitaResultado Respuesta = response.body();
-                    ArrayList<Cita> listaCitas = Respuesta.getResults();
+                    // Se pasa todos los resultados a la lista de Ricks
+                    ArrayList<Rick> listaCitas = Respuesta.getResults();
 
                     listaAdapter.adicionarListaPokemon(listaCitas);
 
                     for (int i=0; i<listaCitas.size(); i++) {
-                        Cita p = listaCitas.get(i);
-                        Log.i(TAG, "Especialidad: "+ p.getEspecialidad());
-                        Log.i(TAG, "Hora: "+ p.getHora());
-                        Log.i(TAG, "Fecha: "+ p.getFecha());
-                        Log.i(TAG, "Disponible: "+ p.getDisponible());
+                        Rick p = listaCitas.get(i);
+                        Log.i(TAG, "Especialidad: "+ p.getName());
+                        Log.i(TAG, "Hora: "+ p.getStatus());
+                        Log.i(TAG, "Fecha: "+ p.getSpecies());
+                        //Log.i(TAG, "Disponible: "+ p.getDisponible());
                     }
                 }else{
                     Log.e(TAG, " onResponse: "+response.errorBody());

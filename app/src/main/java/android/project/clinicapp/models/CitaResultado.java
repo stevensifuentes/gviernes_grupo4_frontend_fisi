@@ -8,7 +8,14 @@ import java.util.ArrayList;
 public class CitaResultado {
     @SerializedName("results")
     @Expose
-    private ArrayList<Cita> results;
+    private ArrayList<Rick> results;
+
+    public ArrayList<Rick> getResults() {
+        return results;
+    }
+
+
+    /*private ArrayList<Cita> results;
 
     public ArrayList<Cita> getResults() {
         return results;
@@ -16,7 +23,7 @@ public class CitaResultado {
 
     public void setResults(ArrayList<Cita> results) {
         this.results = results;
-    }
+    }*/
 
 
 }
