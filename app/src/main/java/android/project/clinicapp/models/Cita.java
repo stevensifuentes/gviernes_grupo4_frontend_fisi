@@ -4,10 +4,10 @@ public class Cita {
     private String especialidad;
     private String hora;
     private String fecha;
-    private int disponible;
+    private boolean disponible;
 
     // Constructur para Mostrar Cita por usuario
-    public Cita(String especialidad, String hora, String fecha, int disponible) {
+    public Cita(String especialidad, String hora, String fecha, boolean disponible) {
         this.especialidad = especialidad;
         this.hora = hora;
         this.fecha = fecha;
@@ -46,12 +46,11 @@ public class Cita {
         this.fecha = fecha;
     }
 
-    public int getDisponible() {
+    public boolean isDisponible() {
         return disponible;
     }
 
-    public void setDisponible(int disponible) {
+    public void setDisponible(boolean disponible) {
         this.disponible = disponible;
     }
-
 }

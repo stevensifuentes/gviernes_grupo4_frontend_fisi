@@ -128,8 +128,6 @@
                         android:layout_height="match_parent"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/aclonica"
                         app:singleSelection="true">
 
                         <com.google.android.material.chip.Chip
@@ -232,7 +230,7 @@
                     android:orientation="horizontal">
 
                     <com.google.android.material.chip.ChipGroup
-                        android:id="@+id/diasChipGroup"
+                        android:id="@+id/fechasChipGroup"
                         android:layout_width="wrap_content"
                         android:layout_height="85dp"
                         android:padding="5dp"

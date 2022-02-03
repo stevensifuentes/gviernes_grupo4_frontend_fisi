@@ -31,7 +31,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
     private static final String TAG = "CLINICA";
     private Retrofit retrofit;
      //public static final String BASE_URL = "https://pokeapi.co/api/v2/";
-    public static final String BASE_URL = "https://rickandmortyapi.com/api/";
+    //public static final String BASE_URL = "https://rickandmortyapi.com/api/";
+    public static final String BASE_URL = "https://clinicauniversitaria.herokuapp.com/api/";
 
     private RecyclerView recyclerView;
     private ListaAdapter listaAdapter;
@@ -69,21 +70,22 @@ import retrofit2.converter.gson.GsonConverterFactory;
         ClinicAPI service = retrofit.create(ClinicAPI.class);
         Call<CitaResultado> citaResultadoCall = service.findAppointments();
 
+
         citaResultadoCall.enqueue(new Callback<CitaResultado>() {
             @Override
             public void onResponse(Call<CitaResultado> call, Response<CitaResultado> response) {
                 if (response.isSuccessful()){
                     CitaResultado Respuesta = response.body();
                     // Se pasa todos los resultados a la lista de Ricks
-                    ArrayList<Rick> listaCitas = Respuesta.getResults();
+                    ArrayList<Cita> listaCitas = Respuesta.getResults();
 
                     listaAdapter.adicionarListaPokemon(listaCitas);
 
                     for (int i=0; i<listaCitas.size(); i++) {
-                        Rick p = listaCitas.get(i);
-                        Log.i(TAG, "Especialidad: "+ p.getName());
-                        Log.i(TAG, "Hora: "+ p.getStatus());
-                        Log.i(TAG, "Fecha: "+ p.getSpecies());
+                        Cita p = listaCitas.get(i);
+                        Log.i(TAG, "Especialidad: "+ p.getEspecialidad());
+                        Log.i(TAG, "Hora: "+ p.getHora());
+                        Log.i(TAG, "Fecha: "+ p.getFecha());
                         //Log.i(TAG, "Disponible: "+ p.getDisponible());
                     }
                 }else{

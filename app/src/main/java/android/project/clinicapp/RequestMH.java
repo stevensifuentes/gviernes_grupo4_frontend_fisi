@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -24,21 +23,23 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RequestMH extends AppCompatActivity {
 
     private ImageButton btn_back_request;
-    private EditText edtnombre, edtapellidos, edtidHistorial, edtcorreo;
+    private EditText edtnombre, edtapellidos, edtdni, edtcorreo;
     private Button btnEnviar;
     private ProgressBar loadingPB;
 
     private static final String TAG = "SOLICITUD DE HISTORIAL";
-    public static final String BASE_URL = "https://reqres.in/api/";
+    //public static final String BASE_URL = "https://reqres.in/api/";
+    public static final String BASE_URL = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request_mh);
 
+        // Capturamos los datos
         edtnombre = (EditText) findViewById(R.id.txtNombre);
         edtapellidos = (EditText) findViewById(R.id.txtApellidos);
-        edtidHistorial = (EditText) findViewById(R.id.txtIDHistorialMedico);
+        edtdni = (EditText) findViewById(R.id.txtdni);
         edtcorreo = (EditText) findViewById(R.id.txtCorreo);
         btnEnviar = (Button) findViewById(R.id.btnEnviarSolicitud);
         loadingPB = (ProgressBar) findViewById(R.id.idLoadingPB);
@@ -47,12 +48,12 @@ public class RequestMH extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (edtnombre.getText().toString().isEmpty() && edtapellidos.getText().toString().isEmpty()
-                        && edtidHistorial.getText().toString().isEmpty() && edtcorreo.getText().toString().isEmpty()) {
+                        && edtdni.getText().toString().isEmpty() && edtcorreo.getText().toString().isEmpty()) {
                     Toast.makeText(RequestMH.this, "Ingrese los campos, por favor.", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                sendRequestHMToAPI(edtnombre.getText().toString(), edtapellidos.getText().toString(), Integer.parseInt(edtidHistorial.getText().toString()), edtcorreo.getText().toString());
+                sendRequestHMToAPI(edtnombre.getText().toString(), edtapellidos.getText().toString(), edtdni.getText().toString(), edtcorreo.getText().toString());
             }
         });
 
@@ -66,7 +67,7 @@ public class RequestMH extends AppCompatActivity {
         });
     }
 
-    private void sendRequestHMToAPI(String nombre, String apellidos, Integer historialID, String email) {
+    private void sendRequestHMToAPI(String nombre, String apellidos, String dni, String email) {
         loadingPB.setVisibility(View.VISIBLE);
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -76,7 +77,7 @@ public class RequestMH extends AppCompatActivity {
 
         ClinicAPI service = retrofit.create(ClinicAPI.class);
 
-        Solicitud solicitud = new Solicitud(nombre, apellidos, historialID, email);
+        Solicitud solicitud = new Solicitud(nombre, apellidos, dni, email);
         Call<Solicitud> solicitudCall = service.sendRequestMH(solicitud);
 
         solicitudCall.enqueue(new Callback<Solicitud>() {
@@ -87,14 +88,14 @@ public class RequestMH extends AppCompatActivity {
                 loadingPB.setVisibility(View.GONE);
                 edtnombre.setText("");
                 edtapellidos.setText("");
-                edtidHistorial.setText("");
+                edtdni.setText("");
                 edtcorreo.setText("");
 
                 Solicitud responseFromAPI = response.body();
                 String responseString = "Response Code : " + response.code()
                         + "\nNombre : " + responseFromAPI.getNombre()
                         + "\n" + "Apellidos : " + responseFromAPI.getApellidos()
-                        + "\n" + "ID Historial Médico : " + responseFromAPI.getHistorial_id()
+                        + "\n" + "DNI : " + responseFromAPI.getDni()
                         + "\n" + "Correo : " + responseFromAPI.getEmail();
 
                 Log.i(TAG, responseString);
@@ -106,6 +107,4 @@ public class RequestMH extends AppCompatActivity {
             }
         });
     }
-
-
 }

@@ -12,8 +12,8 @@ import retrofit2.http.POST;
 
 public interface ClinicAPI {
 
-    //@GET("citas/listUser")
-    @GET("character")
+    @GET("citas/listUser/1")
+    //@GET("character")
     Call<CitaResultado> findAppointments();
 
     @POST("citas/save")

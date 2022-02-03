@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="ChipStyle" parent="Widget.MaterialComponents.Chip.Filter">
+    <style name="ChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
         <item name="chipBackgroundColor">@color/chip_colores</item>
         <item name="android:textColor">@color/chip_color_texto</item>
     </style>

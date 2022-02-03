@@ -17,7 +17,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import java.util.ArrayList;
 
 public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ViewHolder>{
-    private ArrayList<Rick> dataset;
+    private ArrayList<Cita> dataset;
     private Context context;
 
     public ListaAdapter(Context context) {
@@ -33,15 +33,15 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Rick p = dataset.get(position);
-        Glide.with(context)
+        Cita p = dataset.get(position);
+        /*Glide.with(context)
                 .load(p.getImage())
                 .fitCenter()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(holder.citaImageView);
-        holder.especialidadTextView.setText(p.getName());
-        holder.horaTextView.setText(p.getStatus());
-        holder.fechaTextView.setText(p.getSpecies());
+                .into(holder.citaImageView);*/
+        holder.especialidadTextView.setText(p.getEspecialidad());
+        holder.horaTextView.setText(p.getHora());
+        holder.fechaTextView.setText(p.getFecha());
         //holder.disponibleTextView.setText(p.getDisponible());
     }
 
@@ -50,7 +50,7 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ViewHolder>{
         return dataset.size();
     }
 
-    public void adicionarListaPokemon(ArrayList<Rick> listaElement) {
+    public void adicionarListaPokemon(ArrayList<Cita> listaElement) {
         dataset.addAll(listaElement);
         notifyDataSetChanged();
     }
@@ -68,7 +68,7 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ViewHolder>{
             especialidadTextView = (TextView) itemView.findViewById(R.id.especialidadTextView);
             horaTextView = (TextView) itemView.findViewById(R.id.horaTextView);
             fechaTextView = (TextView) itemView.findViewById(R.id.fechaTextView);
-            disponibleTextView = (TextView) itemView.findViewById(R.id.disponibleTextView);
+            //disponibleTextView = (TextView) itemView.findViewById(R.id.disponibleTextView);
             citaImageView = (ImageView) itemView.findViewById(R.id.citaImageView);
         }
     }

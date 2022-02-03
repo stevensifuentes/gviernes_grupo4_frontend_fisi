@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -28,11 +30,13 @@ public class ScheduleAppointment extends AppCompatActivity {
 
     private Spinner spin1;
     private ImageView back;
-    //private ChipGroup especialidadChip, fechaChip, horaChip;
-    //private Button btnRegistrar;
+    private ChipGroup especialidadesChip, fechasChip, horasChip;
+    private Chip chip;
+    Button btnRegistrar;
+    String especialidad, fecha, hora;
 
     private static final String TAG = "CITA PROGRAMADA";
-    public static final String BASE_URL = "https://reqres.in/api/";
+    //public static final String BASE_URL = "https://reqres.in/api/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,20 +51,46 @@ public class ScheduleAppointment extends AppCompatActivity {
         ArrayAdapter<String> adap = new ArrayAdapter<String>(this, R.layout.spinner_atributo,opc);
         spin1.setAdapter(adap);
 
-        // Capturar los datos
 
+        //List<Integer> ids = especialidadChip.getCheckedChipIds();
+        //int ids = especialidadChip.getCheckedChipId();
+        //especialidadChip.setOnCheckedChangeListener(ChipGroup.OnCheckedChangeListener listener)
+
+        // Capturar los datos
+        especialidadesChip = (ChipGroup) findViewById(R.id.especialidadesChipGroup);
+        especialidadesChip.setOnCheckedChangeListener((group, checkedId) -> {
+            chip = (Chip) especialidadesChip.findViewById(checkedId);
+            especialidad = chip.getText().toString();
+
+
+        });
+
+        fechasChip = (ChipGroup) findViewById(R.id.fechasChipGroup);
+        fechasChip.setOnCheckedChangeListener((group, checkedId) -> {
+            chip = (Chip) fechasChip.findViewById(checkedId);
+            fecha = chip.getText().toString();
+        });
+
+        horasChip = (ChipGroup) findViewById(R.id.horasChipGroup);
+        horasChip.setOnCheckedChangeListener((group, checkedId) -> {
+            chip = (Chip) horasChip.findViewById(checkedId);
+            hora = chip.getText().toString();
+        });
 
         // Agregamos evento de click para guardar la cita
-        /*btnRegistrar.setOnClickListener(new View.OnClickListener() {
+        btnRegistrar = (Button) findViewById(R.id.btnRegistrarCita);
+        btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Logica de validación de campos seleccionados
-
-
+                Toast.makeText(ScheduleAppointment.this, "Su cita ha sido programada", Toast.LENGTH_SHORT).show();
+                Log.i("CITA PROG", "Especialidad: "+especialidad);
+                Log.i("CITA PROG", "Fecha: "+fecha);
+                Log.i("CITA PROG", "Hora: "+hora);
                 // Llamamos al método para enviar los datos a la API
-                sendAppointmentToAPI("Médicina", "2022-01-30", "18:00:00", 3);
+                //sendAppointmentToAPI("Médicina", "2022-01-30", "18:00:00", 3);
             }
-        });*/
+        });
 
         back = (ImageView) findViewById(R.id.imgBackProg);
         back.setOnClickListener(new View.OnClickListener() {

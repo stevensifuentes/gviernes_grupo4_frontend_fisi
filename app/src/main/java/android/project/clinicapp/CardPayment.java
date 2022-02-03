@@ -47,8 +47,8 @@ import okhttp3.Response;
 
 public class CardPayment extends AppCompatActivity {
 
-    private static final String BACKEND_URL = "http://192.168.1.7:3000/";
-    private EditText amountText;
+    private static final String BACKEND_URL = "https://clinicauniversitaria.herokuapp.com/api/pagos/Intent";
+    //private EditText amountText;
     private CardFormView cardFormView;
     private Button payButton;
     private ImageButton back;
@@ -58,6 +58,7 @@ public class CardPayment extends AppCompatActivity {
     //declare stripe
     private Stripe stripe;
     Double amountDouble=null;
+    //double amount = amountDouble*100;
 
     private OkHttpClient httpClient;
     static ProgressDialog progressDialog;
@@ -67,7 +68,7 @@ public class CardPayment extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_card_payment);
         // Elementos de la interface de pago
-        amountText = (EditText) findViewById(R.id.amount_id);
+        //amountText = (EditText) findViewById(R.id.amount_id);
         cardFormView = (CardFormView) findViewById(R.id.cardFormView);
         payButton = (Button) findViewById(R.id.btnPagar);
         progressDialog = new ProgressDialog(this);
@@ -94,11 +95,13 @@ public class CardPayment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Consultamos el monto
+
                 //get Amount
-                amountDouble = Double.valueOf(amountText.getText().toString());
+                amountDouble = 15.00;
                 //call checkout to get paymentIntentClientSecret key
                 progressDialog.show();
                 startCheckout();
+                cardFormView.clearFocus();
             }
         });
     }
@@ -108,7 +111,13 @@ public class CardPayment extends AppCompatActivity {
             // Create a PaymentIntent by calling the server's endpoint.
             MediaType mediaType = MediaType.get("application/json; charset=utf-8");
             double amount = amountDouble*100;
+
             Map<String,Object> payMap = new HashMap<>();
+            payMap.put("currency","PEN");
+            payMap.put("amount",amount);
+            String json = new Gson().toJson(payMap);
+
+            /*Map<String,Object> payMap = new HashMap<>();
             Map<String,Object> itemMap = new HashMap<>();
             List<Map<String,Object>> itemList = new ArrayList<>();
             payMap.put("currency","PEN");
@@ -116,10 +125,11 @@ public class CardPayment extends AppCompatActivity {
             itemMap.put("amount",amount);
             itemList.add(itemMap);
             payMap.put("items",itemList);
-            String json = new Gson().toJson(payMap);
+            String json = new Gson().toJson(payMap);*/
+
             RequestBody body = RequestBody.create(json, mediaType);
             Request request = new Request.Builder()
-                    .url(BACKEND_URL + "create-payment-intent")
+                    .url(BACKEND_URL)
                     .post(body)
                     .build();
             httpClient.newCall(request)

@@ -51,14 +51,14 @@
             android:textStyle="bold"/>
     </LinearLayout>
 
-    <TextView
+    <!--<TextView
         android:id="@+id/disponibleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/coda"
         android:text="0"
         android:textAlignment="center"
-        android:textSize="11sp" />
+        android:textSize="11sp" />-->
 
     <ImageButton
         android:id="@+id/qrImageButton"

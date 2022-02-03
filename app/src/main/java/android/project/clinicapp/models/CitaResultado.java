@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public class CitaResultado {
     @SerializedName("results")
     @Expose
-    private ArrayList<Rick> results;
+    private ArrayList<Cita> results;
 
-    public ArrayList<Rick> getResults() {
+    public ArrayList<Cita> getResults() {
         return results;
     }
 

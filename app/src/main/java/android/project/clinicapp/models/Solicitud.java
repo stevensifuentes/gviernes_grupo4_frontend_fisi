@@ -3,13 +3,13 @@ package android.project.clinicapp.models;
 public class Solicitud {
     private String nombre;
     private String apellidos;
-    private Integer historial_id;
+    private String dni;
     private String email;
 
-    public Solicitud(String nombre, String apellidos, Integer historial_id, String email) {
+    public Solicitud(String nombre, String apellidos, String dni, String email) {
         this.nombre = nombre;
         this.apellidos = apellidos;
-        this.historial_id = historial_id;
+        this.dni = dni;
         this.email = email;
     }
 
@@ -29,12 +29,12 @@ public class Solicitud {
         this.apellidos = apellidos;
     }
 
-    public Integer getHistorial_id() {
-        return historial_id;
+    public String getDni() {
+        return dni;
     }
 
-    public void setHistorial_id(Integer historial_id) {
-        this.historial_id = historial_id;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public String getEmail() {
