@@ -28,8 +28,8 @@ public class ScheduleAppointment extends AppCompatActivity {
 
     private Spinner spin1;
     private ImageView back;
-    private ChipGroup especialidadChip, fechaChip, horaChip;
-    private Button btnRegistrar;
+    //private ChipGroup especialidadChip, fechaChip, horaChip;
+    //private Button btnRegistrar;
 
     private static final String TAG = "CITA PROGRAMADA";
     public static final String BASE_URL = "https://reqres.in/api/";
@@ -51,16 +51,16 @@ public class ScheduleAppointment extends AppCompatActivity {
 
 
         // Agregamos evento de click para guardar la cita
-        btnRegistrar.setOnClickListener(new View.OnClickListener() {
+        /*btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Logica de validación de campos seleccionados
 
 
-                // Llamamos al metodo para enviar los datos a la API
+                // Llamamos al método para enviar los datos a la API
                 sendAppointmentToAPI("Médicina", "2022-01-30", "18:00:00", 3);
             }
-        });
+        });*/
 
         back = (ImageView) findViewById(R.id.imgBackProg);
         back.setOnClickListener(new View.OnClickListener() {
@@ -72,7 +72,7 @@ public class ScheduleAppointment extends AppCompatActivity {
         });
     }
 
-    private void sendAppointmentToAPI(String especialidad, String fecha, String hora, Integer historialId) {
+    /*private void sendAppointmentToAPI(String especialidad, String fecha, String hora, Integer historialId) {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -105,5 +105,5 @@ public class ScheduleAppointment extends AppCompatActivity {
                 Log.e(TAG, " Error, no se pudo guardar la cita: "+ t.getMessage());
             }
         });
-    }
+    }*/
 }

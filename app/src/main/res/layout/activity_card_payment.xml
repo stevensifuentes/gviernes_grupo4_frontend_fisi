@@ -29,232 +29,54 @@
             android:id="@+id/iconBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_margin="20dp"
             android:background="#00FFFFFF"
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:src="@drawable/back"
             tools:ignore="SpeakableTextPresentCheck" />
 
-        <ImageView
-            android:id="@+id/blanco1"
-            android:layout_width="318dp"
-            android:layout_height="47dp"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/amountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Amount"
+            android:layout_below="@id/imgHeader">
+
+            <EditText
+                android:id="@+id/amount_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.stripe.android.view.CardFormView
+            android:id="@+id/cardFormView"
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
             android:layout_below="@id/imgHeader"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            app:srcCompat="@drawable/blanco2" />
-
-        <ImageView
-            android:id="@+id/iconCard"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imgHeader"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="55dp"
-            app:srcCompat="@drawable/tarjeta1" />
-
-        <ImageView
-            android:id="@+id/imageView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imgHeader"
-            android:layout_marginStart="275dp"
-            android:layout_marginTop="60dp"
-            app:srcCompat="@drawable/tarjeta2" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/imgHeader"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="60dp"
-            android:layout_toRightOf="@id/iconCard"
-            android:fontFamily="@font/coda"
-            android:text="4444 3333 2222 1111"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/blanco2"
-            android:layout_width="155dp"
-            android:layout_height="43dp"
-            android:layout_below="@id/blanco1"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/blancomitad" />
-
-        <ImageView
-            android:id="@+id/iconCalendar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/blanco1"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/fecha" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/blanco1"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/iconCard"
-            android:fontFamily="@font/coda"
-            android:text="05/26"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/blanco3"
-            android:layout_width="159dp"
-            android:layout_height="44dp"
-            android:layout_below="@id/blanco1"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="-6dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/blanco2"
-            app:srcCompat="@drawable/blancomitad" />
-
-        <ImageView
-            android:id="@+id/iconCVV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/blanco1"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/blanco2"
-            app:srcCompat="@drawable/cvv" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/blanco1"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/iconCVV"
-            android:fontFamily="@font/coda"
-            android:text="444"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/blanco4"
-            android:layout_width="155dp"
-            android:layout_height="43dp"
-            android:layout_below="@id/blanco2"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/blancomitad" />
-
-        <ImageView
-            android:id="@+id/iconUser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/blanco2"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/user" />
-
-        <TextView
-            android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/blanco2"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/iconCard"
-            android:fontFamily="@font/coda"
-            android:text="Cody"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/blanco5"
-            android:layout_width="159dp"
-            android:layout_height="44dp"
-            android:layout_below="@id/blanco2"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="-6dp"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/blanco2"
-            app:srcCompat="@drawable/blancomitad" />
-
-        <ImageView
-            android:id="@+id/iconLastname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/blanco2"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/blanco2"
-            app:srcCompat="@drawable/user" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/blanco2"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/iconCVV"
-            android:fontFamily="@font/coda"
-            android:text="Fisher"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/blanco6"
-            android:layout_width="318dp"
-            android:layout_height="47dp"
-            android:layout_below="@id/blanco4"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/blanco2" />
-
-        <ImageView
-            android:id="@+id/iconEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/blanco4"
-            android:layout_marginStart="70dp"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/email" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/blanco4"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/iconCard"
-            android:fontFamily="@font/coda"
-            android:text="cody.fisher@unmsm.edu.pe"
-            android:textSize="16sp" />
+            android:layout_marginTop="80dp" />
 
         <Button
             android:id="@+id/btnPagar"
             android:layout_width="220dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginStart="97dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginStart="94dp"
             android:layout_marginEnd="94dp"
-            android:layout_marginRight="60dp"
             android:layout_marginBottom="88dp"
             android:background="@drawable/bordes_redondos"
-            android:text="Pagar S/8.00"
+            android:text="@string/payButton"
             android:textColor="#FFFF"
             android:textSize="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_toEndOf="@id/cardFormView"
+            android:layout_toStartOf="@id/cardFormView"
+            android:layout_alignBottom="@id/cardFormView"
             app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.848" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

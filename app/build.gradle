@@ -48,4 +48,10 @@ dependencies {
 
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation "androidx.cardview:cardview:1.0.0"
+
+    //Stripe dependency
+    implementation 'com.stripe:stripe-android:19.1.0'
+    // sor network call
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
+    implementation 'com.google.code.gson:gson:2.8.9'
 }
