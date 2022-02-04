@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -137,10 +138,10 @@
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:textAlignment="center"
-                            android:textSize="16dp"
                             android:drawableTop="@drawable/medicina"
-                            android:text="Médicina" />
+                            android:text="Médicina"
+                            android:textAlignment="center"
+                            android:textSize="16dp" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/odontologiaChip"
@@ -149,10 +150,10 @@
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:textAlignment="center"
-                            android:textSize="16dp"
                             android:drawableTop="@drawable/odontologia"
-                            android:text="Odontología" />
+                            android:text="Odontología"
+                            android:textAlignment="center"
+                            android:textSize="16dp" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/psicologiaChip"
@@ -161,10 +162,10 @@
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:textAlignment="center"
-                            android:textSize="16dp"
                             android:drawableTop="@drawable/psicologia"
-                            android:text="Psicología" />
+                            android:text="Psicología"
+                            android:textAlignment="center"
+                            android:textSize="16dp" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/cirugiaChip"
@@ -173,10 +174,10 @@
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:textAlignment="center"
-                            android:textSize="16dp"
                             android:drawableTop="@drawable/cirugia"
                             android:text="Cirugía"
+                            android:textAlignment="center"
+                            android:textSize="16dp"
                             tools:ignore="MissingConstraints" />
 
                         <com.google.android.material.chip.Chip
@@ -186,10 +187,10 @@
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:textAlignment="center"
-                            android:textSize="16dp"
                             android:drawableTop="@drawable/neurologia"
-                            android:text="Neurología" />
+                            android:text="Neurología"
+                            android:textAlignment="center"
+                            android:textSize="16dp" />
                     </com.google.android.material.chip.ChipGroup>
 
                 </LinearLayout>
@@ -243,7 +244,7 @@
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:text="17 Lun"
+                            android:text="24 LUN"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -254,10 +255,9 @@
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
                             android:layout_weight="1"
-                            android:text="18 Mar"
+                            android:text="25 MAR"
                             android:textSize="20sp"
-                            android:textStyle="bold"
-                            tools:ignore="MissingConstraints" />
+                            android:textStyle="bold" />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/miercolesChip"
@@ -265,7 +265,7 @@
                             android:layout_width="95dp"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
-                            android:text="19 Mier"
+                            android:text="26 MIE"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -276,7 +276,7 @@
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
                             android:padding="20dp"
-                            android:text="20 Jue"
+                            android:text="27 JUE"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -286,7 +286,7 @@
                             android:layout_width="95dp"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
-                            android:text="21 Vie"
+                            android:text="28 VIE"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -296,7 +296,18 @@
                             android:layout_width="95dp"
                             android:layout_height="match_parent"
                             android:layout_margin="5dp"
-                            android:text="22 Sab"
+                            android:text="29 SAB"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/lunes2Chip"
+                            style="@style/ChipStyle"
+                            android:layout_width="95dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:text="30 DOM"
                             android:textSize="20sp"
                             android:textStyle="bold" />
                     </com.google.android.material.chip.ChipGroup>

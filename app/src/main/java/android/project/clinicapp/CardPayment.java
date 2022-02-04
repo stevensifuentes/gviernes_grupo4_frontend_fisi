@@ -8,6 +8,8 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.project.clinicapp.API.ClinicAPI;
+import android.project.clinicapp.models.CitaProgramada;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -44,6 +46,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CardPayment extends AppCompatActivity {
 
@@ -53,12 +57,17 @@ public class CardPayment extends AppCompatActivity {
     private Button payButton;
     private ImageButton back;
 
+    String especialidadFinal, fechaFinal, horaFinal;
+
     // we need paymentIntentClientSecret to start transaction
     private String paymentIntentClientSecret;
     //declare stripe
     private Stripe stripe;
+    private Retrofit retrofit;
     Double amountDouble=null;
-    //double amount = amountDouble*100;
+
+    private static final String TAG = "CITA PROGRAMADA";
+    public static final String BASE_URL = "https://clinicauniversitaria.herokuapp.com/api/";
 
     private OkHttpClient httpClient;
     static ProgressDialog progressDialog;
@@ -85,7 +94,21 @@ public class CardPayment extends AppCompatActivity {
             }
         });
 
-        //Initialize
+        // Recuperar valores de la actividad de Programar cita
+
+        especialidadFinal = getIntent().getStringExtra("especialidad");
+        fechaFinal = getIntent().getStringExtra("fecha");
+        horaFinal = getIntent().getStringExtra("hora");
+
+        // Inicializamos librería retrofit
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create(
+                        new GsonBuilder().serializeNulls().create()
+                ))
+                .build();
+
+        //Initialize Stripe
         stripe = new Stripe(
                 getApplicationContext(),
                 Objects.requireNonNull("pk_test_51KMwfOLFRd7vEr3MUZw9H01MvZ4DUXKa4dm2sIAsPr8wMe3RU4z5HXuCekRcEidOEJqHWF7h1yWV8m94wPr5zpe2000Ib8mmue")
@@ -95,10 +118,7 @@ public class CardPayment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Consultamos el monto
-
-                //get Amount
                 amountDouble = 15.00;
-                //call checkout to get paymentIntentClientSecret key
                 progressDialog.show();
                 startCheckout();
                 cardFormView.clearFocus();
@@ -254,5 +274,40 @@ public class CardPayment extends AppCompatActivity {
                 .setMessage(message);
         builder.setPositiveButton("Ok", null);
         builder.create().show();
+    }
+
+    private void sendAppointmentToAPI(String especialidad, String fecha, String hora, Integer historialId) {
+        /*Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();*/
+
+        ClinicAPI service = retrofit.create(ClinicAPI.class);
+
+        // Instanciamos la cita
+        CitaProgramada cita = new CitaProgramada(especialidad, fecha, hora, historialId);
+
+        retrofit2.Call<CitaProgramada> citaProgramadaCall = service.saveAppointments(cita);
+
+        citaProgramadaCall.enqueue(new retrofit2.Callback<CitaProgramada>() {
+            @Override
+            public void onResponse(retrofit2.Call<CitaProgramada> call, retrofit2.Response<CitaProgramada> response) {
+                Toast.makeText(CardPayment.this, "Su cita ha sido programada", Toast.LENGTH_SHORT).show();
+
+                CitaProgramada responseFromAPI = response.body();
+                String responseString = "Response Code : " + response.code()
+                        + "\nEspecialidad : " + responseFromAPI.getEspecialidad()
+                        + "\n" + "Fecha : " + responseFromAPI.getFecha()
+                        + "\n" + "Hora : " + responseFromAPI.getHora()
+                        + "\n" + "Historial id : " + responseFromAPI.getHistorial_id();
+
+                Log.i(TAG, responseString);
+            }
+
+            @Override
+            public void onFailure(retrofit2.Call<CitaProgramada> call, Throwable t) {
+                Log.e(TAG, " Error, no se pudo guardar la cita: "+ t.getMessage());
+            }
+        });
     }
 }

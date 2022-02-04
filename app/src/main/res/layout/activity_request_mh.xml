@@ -73,7 +73,6 @@
             android:drawableLeft="@android:drawable/ic_lock_idle_lock"
             android:ems="10"
             android:hint="@string/dniPaciente"
-            android:inputType="textPassword"
             android:minHeight="48dp"
             android:padding="5dp"
             android:textColor="#757575"

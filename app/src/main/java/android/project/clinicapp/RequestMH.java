@@ -29,7 +29,7 @@ public class RequestMH extends AppCompatActivity {
 
     private static final String TAG = "SOLICITUD DE HISTORIAL";
     //public static final String BASE_URL = "https://reqres.in/api/";
-    public static final String BASE_URL = "";
+    public static final String BASE_URL = "https://clinicauniversitaria.herokuapp.com/api/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,7 @@ public class RequestMH extends AppCompatActivity {
         });
     }
 
-    private void sendRequestHMToAPI(String nombre, String apellidos, String dni, String email) {
+    private void sendRequestHMToAPI(String nombre, String apellidos, String dni, String correo_electronico) {
         loadingPB.setVisibility(View.VISIBLE);
 
         Retrofit retrofit = new Retrofit.Builder()
@@ -77,7 +77,7 @@ public class RequestMH extends AppCompatActivity {
 
         ClinicAPI service = retrofit.create(ClinicAPI.class);
 
-        Solicitud solicitud = new Solicitud(nombre, apellidos, dni, email);
+        Solicitud solicitud = new Solicitud(nombre, apellidos, dni, correo_electronico);
         Call<Solicitud> solicitudCall = service.sendRequestMH(solicitud);
 
         solicitudCall.enqueue(new Callback<Solicitud>() {
@@ -96,7 +96,7 @@ public class RequestMH extends AppCompatActivity {
                         + "\nNombre : " + responseFromAPI.getNombre()
                         + "\n" + "Apellidos : " + responseFromAPI.getApellidos()
                         + "\n" + "DNI : " + responseFromAPI.getDni()
-                        + "\n" + "Correo : " + responseFromAPI.getEmail();
+                        + "\n" + "Correo : " + responseFromAPI.getCorreo_electronico();
 
                 Log.i(TAG, responseString);
             }

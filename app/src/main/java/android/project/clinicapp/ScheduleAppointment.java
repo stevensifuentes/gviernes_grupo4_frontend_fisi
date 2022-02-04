@@ -1,12 +1,20 @@
 package android.project.clinicapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.project.clinicapp.API.ClinicAPI;
 import android.project.clinicapp.models.Cita;
 import android.project.clinicapp.models.CitaProgramada;
+import android.project.clinicapp.models.CitaResultado;
+import android.project.clinicapp.models.Fecha;
+import android.project.clinicapp.models.FechaResultado;
+import android.project.clinicapp.models.Hora;
+import android.project.clinicapp.models.HorasResultado;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -17,7 +25,9 @@ import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
+import com.google.gson.GsonBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -35,8 +45,11 @@ public class ScheduleAppointment extends AppCompatActivity {
     Button btnRegistrar;
     String especialidad, fecha, hora;
 
-    private static final String TAG = "CITA PROGRAMADA";
+    private Retrofit retrofit;
+
+    private static final String TAG = "CITA A PROGRAMAR";
     //public static final String BASE_URL = "https://reqres.in/api/";
+    public static final String BASE_URL = "https://clinicauniversitaria.herokuapp.com/api/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,30 +64,42 @@ public class ScheduleAppointment extends AppCompatActivity {
         ArrayAdapter<String> adap = new ArrayAdapter<String>(this, R.layout.spinner_atributo,opc);
         spin1.setAdapter(adap);
 
+        // Inicializamos Retrofit
+        retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create(
+                        new GsonBuilder().serializeNulls().create()
+                ))
+                .build();
 
         //List<Integer> ids = especialidadChip.getCheckedChipIds();
         //int ids = especialidadChip.getCheckedChipId();
         //especialidadChip.setOnCheckedChangeListener(ChipGroup.OnCheckedChangeListener listener)
 
-        // Capturar los datos
+        // ESPECIALIDAD
         especialidadesChip = (ChipGroup) findViewById(R.id.especialidadesChipGroup);
         especialidadesChip.setOnCheckedChangeListener((group, checkedId) -> {
             chip = (Chip) especialidadesChip.findViewById(checkedId);
             especialidad = chip.getText().toString();
-
-
+            solicitarDataFechas(especialidad);
         });
 
+
+        // FECHAS
         fechasChip = (ChipGroup) findViewById(R.id.fechasChipGroup);
         fechasChip.setOnCheckedChangeListener((group, checkedId) -> {
             chip = (Chip) fechasChip.findViewById(checkedId);
-            fecha = chip.getText().toString();
+            fecha = "2022-01-"+chip.getText().subSequence(0, 2).toString();
+            solicitarDataHoras(especialidad, fecha);
+            // 21 LUN -> "2022-01-"+${};
         });
 
+        // HORAS
         horasChip = (ChipGroup) findViewById(R.id.horasChipGroup);
         horasChip.setOnCheckedChangeListener((group, checkedId) -> {
             chip = (Chip) horasChip.findViewById(checkedId);
-            hora = chip.getText().toString();
+            hora = "0"+chip.getText().subSequence(0,5).toString()+":00";
+            //02:00:00
         });
 
         // Agregamos evento de click para guardar la cita
@@ -83,12 +108,20 @@ public class ScheduleAppointment extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Logica de validación de campos seleccionados
-                Toast.makeText(ScheduleAppointment.this, "Su cita ha sido programada", Toast.LENGTH_SHORT).show();
                 Log.i("CITA PROG", "Especialidad: "+especialidad);
                 Log.i("CITA PROG", "Fecha: "+fecha);
                 Log.i("CITA PROG", "Hora: "+hora);
                 // Llamamos al método para enviar los datos a la API
                 //sendAppointmentToAPI("Médicina", "2022-01-30", "18:00:00", 3);
+                //sendAppointmentToAPI(especialidad, fecha, hora, 1);
+
+                Intent inte = new Intent(view.getContext(), CardPayment.class);
+                // Envía los datos de la cita a la interfaz de pago
+                inte.putExtra("especialidad", especialidad);
+                inte.putExtra("fecha", fecha);
+                inte.putExtra("hora", hora);
+                startActivity(inte);
+                //Toast.makeText(ScheduleAppointment.this, "Su cita ha sido programada", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -102,38 +135,69 @@ public class ScheduleAppointment extends AppCompatActivity {
         });
     }
 
-    /*private void sendAppointmentToAPI(String especialidad, String fecha, String hora, Integer historialId) {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
+    public void solicitarDataFechas(String especialidad) {
         ClinicAPI service = retrofit.create(ClinicAPI.class);
+        Call<FechaResultado> citaResultadoCall = service.filterDate(especialidad);
 
-        // Instanciamos la cita
-        CitaProgramada cita = new CitaProgramada(especialidad, fecha, hora, historialId);
-
-        Call<CitaProgramada> citaProgramadaCall = service.saveAppointments(cita);
-
-        citaProgramadaCall.enqueue(new Callback<CitaProgramada>() {
+        citaResultadoCall.enqueue(new Callback<FechaResultado>() {
             @Override
-            public void onResponse(Call<CitaProgramada> call, Response<CitaProgramada> response) {
-                Toast.makeText(ScheduleAppointment.this, "Su cita ha sido programada", Toast.LENGTH_SHORT).show();
+            public void onResponse(Call<FechaResultado> call, Response<FechaResultado> response) {
+                if (response.isSuccessful()){
+                    FechaResultado Respuesta = response.body();
+                    // Se pasa todos los resultados a la lista de Ricks
+                    ArrayList<Fecha> listaFechas = Respuesta.getResults();
 
-                CitaProgramada responseFromAPI = response.body();
-                String responseString = "Response Code : " + response.code()
-                        + "\nEspecialidad : " + responseFromAPI.getEspecialidad()
-                        + "\n" + "Fecha : " + responseFromAPI.getFecha()
-                        + "\n" + "Hora : " + responseFromAPI.getHora()
-                        + "\n" + "Historial id : " + responseFromAPI.getHistorial_id();
-
-                Log.i(TAG, responseString);
+                    for (int i=0; i<listaFechas.size(); i++) {
+                        chip = (Chip) fechasChip.findViewById(i);
+                        //Log.e(TAG, " onFailure: "+ t.getMessage());
+                        Fecha p = listaFechas.get(i);
+                        Log.i(TAG, "Número de día: "+ p.getNumberDia());
+                        Log.i(TAG, "Disponible: "+ p.getDisponible());
+                        if (!p.getDisponible()){
+                            chip.setChipBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(),R.color.disabled)));
+                        }
+                    }
+                }else{
+                    Log.e(TAG, " onResponse: "+response.errorBody());
+                }
             }
-
             @Override
-            public void onFailure(Call<CitaProgramada> call, Throwable t) {
-                Log.e(TAG, " Error, no se pudo guardar la cita: "+ t.getMessage());
+            public void onFailure(Call<FechaResultado> call, Throwable t) {
+                Log.e(TAG, " onFailure: "+ t.getMessage());
             }
         });
-    }*/
+    }
+
+    public void solicitarDataHoras(String especialidad, String fecha) {
+        ClinicAPI service = retrofit.create(ClinicAPI.class);
+        Call<HorasResultado> citaResultadoCall = service.filterTimes(especialidad, fecha);
+
+        citaResultadoCall.enqueue(new Callback<HorasResultado>() {
+            @Override
+            public void onResponse(Call<HorasResultado> call, Response<HorasResultado> response) {
+                if (response.isSuccessful()) {
+                    HorasResultado Respuesta = response.body();
+                    // Se pasa todos los resultados a la lista de Ricks
+                    ArrayList<Hora> listaHoras = Respuesta.getResults();
+
+                    for (int i = 0; i < listaHoras.size(); i++) {
+                        chip = (Chip) horasChip.findViewById(i);
+                        Hora p = listaHoras.get(i);
+                        Log.i(TAG, "Número de hora: " + p.getHora());
+                        Log.i(TAG, "Disponible: " + p.getDisponible());
+                        if (!p.getDisponible()) {
+                            chip.setChipBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.disabled)));
+                        }
+                    }
+                } else {
+                    Log.e(TAG, " onResponse: " + response.errorBody());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<HorasResultado> call, Throwable t) {
+                Log.e(TAG, " onFailure: " + t.getMessage());
+            }
+        });
+    }
 }

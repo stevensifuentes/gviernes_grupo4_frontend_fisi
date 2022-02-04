@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="20dp"
+    android:orientation="horizontal">
+
+    <!--android:background="@drawable/square"-->
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/fechasChipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:padding="5dp"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/itemChip"
+            style="@style/ChipStyle"
+            android:layout_width="95dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:text="17 Lun"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </com.google.android.material.chip.ChipGroup>
+
+    <!--<TextView
+        android:id="@+id/numeroTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/paytone_one"
+        android:text="17"
+        android:textAlignment="center"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/diaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/paytone_one"
+        android:text="LUN"
+        android:textAlignment="center"
+        android:textSize="18sp" />-->
+</LinearLayout>
+

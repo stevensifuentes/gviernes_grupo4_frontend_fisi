@@ -2,15 +2,15 @@ package android.project.clinicapp.models;
 
 public class Solicitud {
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private String dni;
-    private String email;
+    private String correo_electronico;
 
-    public Solicitud(String nombre, String apellidos, String dni, String email) {
+    public Solicitud(String nombre, String apellido, String dni, String email) {
         this.nombre = nombre;
-        this.apellidos = apellidos;
+        this.apellido = apellido;
         this.dni = dni;
-        this.email = email;
+        this.correo_electronico = email;
     }
 
     public String getNombre() {
@@ -22,11 +22,11 @@ public class Solicitud {
     }
 
     public String getApellidos() {
-        return apellidos;
+        return apellido;
     }
 
     public void setApellido(String apellidos) {
-        this.apellidos = apellidos;
+        this.apellido = apellidos;
     }
 
     public String getDni() {
@@ -37,11 +37,11 @@ public class Solicitud {
         this.dni = dni;
     }
 
-    public String getEmail() {
-        return email;
+    public String getCorreo_electronico() {
+        return correo_electronico;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCorreo_electronico(String correo_electronico) {
+        this.correo_electronico = correo_electronico;
     }
 }
