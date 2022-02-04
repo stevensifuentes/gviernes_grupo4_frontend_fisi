@@ -1,20 +1,20 @@
 package android.project.clinicapp.models;
 
 public class Fecha {
-    private int numberDia;
+    private int dia;
     private Boolean disponible;
 
-    public Fecha(int numberDia, Boolean disponible) {
-        this.numberDia = numberDia;
+    public Fecha(int dia, Boolean disponible) {
+        this.dia = dia;
         this.disponible = disponible;
     }
 
-    public int getNumberDia() {
-        return numberDia;
+    public int getDia() {
+        return dia;
     }
 
-    public void setNumberDia(int numberDia) {
-        this.numberDia = numberDia;
+    public void setDia(int dia) {
+        this.dia = dia;
     }
 
     public Boolean getDisponible() {

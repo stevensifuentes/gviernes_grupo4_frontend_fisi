@@ -3,14 +3,10 @@ package android.project.clinicapp;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.project.clinicapp.API.ClinicAPI;
-import android.project.clinicapp.models.Cita;
-import android.project.clinicapp.models.CitaProgramada;
-import android.project.clinicapp.models.CitaResultado;
 import android.project.clinicapp.models.Fecha;
 import android.project.clinicapp.models.FechaResultado;
 import android.project.clinicapp.models.Hora;
@@ -21,14 +17,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.gson.GsonBuilder;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -48,7 +42,6 @@ public class ScheduleAppointment extends AppCompatActivity {
     private Retrofit retrofit;
 
     private static final String TAG = "CITA A PROGRAMAR";
-    //public static final String BASE_URL = "https://reqres.in/api/";
     public static final String BASE_URL = "https://clinicauniversitaria.herokuapp.com/api/";
 
     @Override
@@ -89,6 +82,7 @@ public class ScheduleAppointment extends AppCompatActivity {
         fechasChip = (ChipGroup) findViewById(R.id.fechasChipGroup);
         fechasChip.setOnCheckedChangeListener((group, checkedId) -> {
             chip = (Chip) fechasChip.findViewById(checkedId);
+            Log.i("ID", "ID: "+ fechasChip.getCheckedChipIds());
             fecha = "2022-01-"+chip.getText().subSequence(0, 2).toString();
             solicitarDataHoras(especialidad, fecha);
             // 21 LUN -> "2022-01-"+${};
@@ -98,7 +92,8 @@ public class ScheduleAppointment extends AppCompatActivity {
         horasChip = (ChipGroup) findViewById(R.id.horasChipGroup);
         horasChip.setOnCheckedChangeListener((group, checkedId) -> {
             chip = (Chip) horasChip.findViewById(checkedId);
-            hora = "0"+chip.getText().subSequence(0,5).toString()+":00";
+            Log.i("ID", "ID: "+checkedId);
+            hora = chip.getText().subSequence(0,4).toString()+":00";
             //02:00:00
         });
 
@@ -111,6 +106,7 @@ public class ScheduleAppointment extends AppCompatActivity {
                 Log.i("CITA PROG", "Especialidad: "+especialidad);
                 Log.i("CITA PROG", "Fecha: "+fecha);
                 Log.i("CITA PROG", "Hora: "+hora);
+
                 // Llamamos al método para enviar los datos a la API
                 //sendAppointmentToAPI("Médicina", "2022-01-30", "18:00:00", 3);
                 //sendAppointmentToAPI(especialidad, fecha, hora, 1);
@@ -138,6 +134,7 @@ public class ScheduleAppointment extends AppCompatActivity {
     public void solicitarDataFechas(String especialidad) {
         ClinicAPI service = retrofit.create(ClinicAPI.class);
         Call<FechaResultado> citaResultadoCall = service.filterDate(especialidad);
+        //ArrayList<Fecha> listaFechas;
 
         citaResultadoCall.enqueue(new Callback<FechaResultado>() {
             @Override
@@ -146,16 +143,13 @@ public class ScheduleAppointment extends AppCompatActivity {
                     FechaResultado Respuesta = response.body();
                     // Se pasa todos los resultados a la lista de Ricks
                     ArrayList<Fecha> listaFechas = Respuesta.getResults();
-
+                    habilitarFechas(listaFechas);
                     for (int i=0; i<listaFechas.size(); i++) {
-                        chip = (Chip) fechasChip.findViewById(i);
+                        //chip = (Chip) fechasChip.findViewById(i);
                         //Log.e(TAG, " onFailure: "+ t.getMessage());
                         Fecha p = listaFechas.get(i);
-                        Log.i(TAG, "Número de día: "+ p.getNumberDia());
+                        Log.i(TAG, "Número de día: "+ p.getDia());
                         Log.i(TAG, "Disponible: "+ p.getDisponible());
-                        if (!p.getDisponible()){
-                            chip.setChipBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(),R.color.disabled)));
-                        }
                     }
                 }else{
                     Log.e(TAG, " onResponse: "+response.errorBody());
@@ -166,6 +160,17 @@ public class ScheduleAppointment extends AppCompatActivity {
                 Log.e(TAG, " onFailure: "+ t.getMessage());
             }
         });
+    }
+
+    public void habilitarFechas(ArrayList<Fecha> listaFechas){
+        int ids[] = {2131362290, 2131362298, 2131362326, 2131362269, 2131362652, 2131362437, 2131362289};
+        for (int i=0; i<listaFechas.size(); i++){
+            chip = (Chip) fechasChip.findViewById(ids[i]);
+            Fecha f = listaFechas.get(i);
+            if(!f.getDisponible()){
+                chip.setChipBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.disabled)));
+            }
+        }
     }
 
     public void solicitarDataHoras(String especialidad, String fecha) {
@@ -179,25 +184,33 @@ public class ScheduleAppointment extends AppCompatActivity {
                     HorasResultado Respuesta = response.body();
                     // Se pasa todos los resultados a la lista de Ricks
                     ArrayList<Hora> listaHoras = Respuesta.getResults();
-
+                    habilitarHoras(listaHoras);
                     for (int i = 0; i < listaHoras.size(); i++) {
-                        chip = (Chip) horasChip.findViewById(i);
+                        //chip = (Chip) horasChip.findViewById(i);
                         Hora p = listaHoras.get(i);
                         Log.i(TAG, "Número de hora: " + p.getHora());
                         Log.i(TAG, "Disponible: " + p.getDisponible());
-                        if (!p.getDisponible()) {
-                            chip.setChipBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(getApplicationContext(), R.color.disabled)));
-                        }
+
                     }
                 } else {
                     Log.e(TAG, " onResponse: " + response.errorBody());
                 }
             }
-
             @Override
             public void onFailure(Call<HorasResultado> call, Throwable t) {
                 Log.e(TAG, " onFailure: " + t.getMessage());
             }
         });
+    }
+
+    public void habilitarHoras(ArrayList<Hora> listaHoras){
+        int ids[] = {2131362003, 2131362004, 2131362005, 2131362006, 2131362007, 2131362008, 2131362009, 2131362010, 2131362011, 2131362013, 2131362014, 2131362015, 2131362016, 2131362017, 2131362018, 2131362019, 2131362020, 2131362021, 2131362022, 2131362024, 2131362025};
+        for (int i=0; i<listaHoras.size(); i++){
+            chip = (Chip) horasChip.findViewById(ids[i]);
+            Hora h = listaHoras.get(i);
+            if(!h.getDisponible()){
+                chip.setChipBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(this,R.color.disabled)));
+            }
+        }
     }
 }

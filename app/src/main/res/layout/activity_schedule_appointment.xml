@@ -139,7 +139,7 @@
                             android:layout_margin="5dp"
                             android:layout_weight="1"
                             android:drawableTop="@drawable/medicina"
-                            android:text="Médicina"
+                            android:text="Medicina"
                             android:textAlignment="center"
                             android:textSize="16dp" />
 
@@ -151,7 +151,7 @@
                             android:layout_margin="5dp"
                             android:layout_weight="1"
                             android:drawableTop="@drawable/odontologia"
-                            android:text="Odontología"
+                            android:text="Odontologia"
                             android:textAlignment="center"
                             android:textSize="16dp" />
 
@@ -163,7 +163,7 @@
                             android:layout_margin="5dp"
                             android:layout_weight="1"
                             android:drawableTop="@drawable/psicologia"
-                            android:text="Psicología"
+                            android:text="Psicologia"
                             android:textAlignment="center"
                             android:textSize="16dp" />
 
@@ -175,7 +175,7 @@
                             android:layout_margin="5dp"
                             android:layout_weight="1"
                             android:drawableTop="@drawable/cirugia"
-                            android:text="Cirugía"
+                            android:text="Cirugia"
                             android:textAlignment="center"
                             android:textSize="16dp"
                             tools:ignore="MissingConstraints" />
@@ -188,7 +188,7 @@
                             android:layout_margin="5dp"
                             android:layout_weight="1"
                             android:drawableTop="@drawable/neurologia"
-                            android:text="Neurología"
+                            android:text="Neurologia"
                             android:textAlignment="center"
                             android:textSize="16dp" />
                     </com.google.android.material.chip.ChipGroup>
@@ -348,21 +348,21 @@
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 9:00 AM " />
+                            android:text="9:00 AM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip02"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 9:20 AM " />
+                            android:text="9:20 AM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip03"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 9:40 AM " />
+                            android:text="9:40 AM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip04"
@@ -406,131 +406,89 @@
                             android:layout_height="wrap_content"
                             android:text="11:40 AM" />
 
-                        <!--<com.google.android.material.chip.Chip
+                        <com.google.android.material.chip.Chip
                             android:id="@+id/chip10"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="12:00 PM" />
+                            android:text="14:00 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip11"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="12:20 PM" />
+                            android:text="14:20 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip12"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="12:40 PM" />
+                            android:text="14:40 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip13"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 1:00 PM " />
+                            android:text="15:00 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip14"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 1:20 PM " />
+                            android:text="15:20 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip15"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 1:40 PM " />-->
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip10"
-                            style="@style/ChipStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" 2:00 PM " />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip11"
-                            style="@style/ChipStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" 2:20 PM " />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip12"
-                            style="@style/ChipStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" 2:40 PM " />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip13"
-                            style="@style/ChipStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" 3:00 PM " />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip14"
-                            style="@style/ChipStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" 3:20 PM " />
-
-                        <com.google.android.material.chip.Chip
-                            android:id="@+id/chip15"
-                            style="@style/ChipStyle"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text=" 3:40 PM " />
+                            android:text="15:40 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip16"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 4:00 PM " />
+                            android:text="16:00 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip17"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 4:20 PM " />
+                            android:text="16:20 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip18"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 4:40 PM " />
+                            android:text="16:40 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip19"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 5:00 PM " />
+                            android:text="16:00 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip20"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 5:20 PM " />
+                            android:text="16:20 PM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip21"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=" 5:40 PM " />
+                            android:text="16:40 PM " />
                     </com.google.android.material.chip.ChipGroup>
                 </LinearLayout>
             </HorizontalScrollView>

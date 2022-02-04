@@ -51,12 +51,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CardPayment extends AppCompatActivity {
 
-    private static final String BACKEND_URL = "https://clinicauniversitaria.herokuapp.com/api/pagos/Intent";
     //private EditText amountText;
     private CardFormView cardFormView;
     private Button payButton;
     private ImageButton back;
-
     String especialidadFinal, fechaFinal, horaFinal;
 
     // we need paymentIntentClientSecret to start transaction
@@ -67,6 +65,7 @@ public class CardPayment extends AppCompatActivity {
     Double amountDouble=null;
 
     private static final String TAG = "CITA PROGRAMADA";
+    private static final String BACKEND_URL = "https://clinicauniversitaria.herokuapp.com/api/pagos/Intent";
     public static final String BASE_URL = "https://clinicauniversitaria.herokuapp.com/api/";
 
     private OkHttpClient httpClient;
@@ -95,7 +94,6 @@ public class CardPayment extends AppCompatActivity {
         });
 
         // Recuperar valores de la actividad de Programar cita
-
         especialidadFinal = getIntent().getStringExtra("especialidad");
         fechaFinal = getIntent().getStringExtra("fecha");
         horaFinal = getIntent().getStringExtra("hora");
@@ -154,7 +152,6 @@ public class CardPayment extends AppCompatActivity {
                     .build();
             httpClient.newCall(request)
                     .enqueue(new PayCallback(this));
-
         }
     }
 
@@ -245,9 +242,10 @@ public class CardPayment extends AppCompatActivity {
             if (status == PaymentIntent.Status.Succeeded) {
                 // Payment completed successfully
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                Toast toast =Toast.makeText(activity, "Pago realizado con éxito", Toast.LENGTH_SHORT);
+                Toast.makeText(CardPayment.this, "Pago realizado con éxito\nSu cita ha sido programada", Toast.LENGTH_SHORT).show();
+                sendAppointmentToAPI(especialidadFinal, fechaFinal, horaFinal, 1);
                 //toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
+                //toast.show();
             } else if (status == PaymentIntent.Status.RequiresPaymentMethod) {
                 // Payment failed – allow retrying using a different payment method
                 activity.displayAlert(
@@ -292,8 +290,6 @@ public class CardPayment extends AppCompatActivity {
         citaProgramadaCall.enqueue(new retrofit2.Callback<CitaProgramada>() {
             @Override
             public void onResponse(retrofit2.Call<CitaProgramada> call, retrofit2.Response<CitaProgramada> response) {
-                Toast.makeText(CardPayment.this, "Su cita ha sido programada", Toast.LENGTH_SHORT).show();
-
                 CitaProgramada responseFromAPI = response.body();
                 String responseString = "Response Code : " + response.code()
                         + "\nEspecialidad : " + responseFromAPI.getEspecialidad()

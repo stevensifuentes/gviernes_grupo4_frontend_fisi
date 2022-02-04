@@ -36,7 +36,5 @@ public interface ClinicAPI {
     /*@GET("citas/filterFecha")
     Call<HoraResultado> filterTime();*/
 
-
-
 }
 

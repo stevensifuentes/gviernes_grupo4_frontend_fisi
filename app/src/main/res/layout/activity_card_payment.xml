@@ -36,21 +36,6 @@
             android:src="@drawable/back"
             tools:ignore="SpeakableTextPresentCheck" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/amountLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Enter Amount"
-            android:layout_below="@id/imgHeader">
-
-            <EditText
-                android:id="@+id/amount_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-        </com.google.android.material.textfield.TextInputLayout>
-
         <com.stripe.android.view.CardFormView
             android:id="@+id/cardFormView"
             android:layout_width="380dp"

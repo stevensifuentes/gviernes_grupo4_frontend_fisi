@@ -14,16 +14,4 @@ public class CitaResultado {
         return results;
     }
 
-
-    /*private ArrayList<Cita> results;
-
-    public ArrayList<Cita> getResults() {
-        return results;
-    }
-
-    public void setResults(ArrayList<Cita> results) {
-        this.results = results;
-    }*/
-
-
 }

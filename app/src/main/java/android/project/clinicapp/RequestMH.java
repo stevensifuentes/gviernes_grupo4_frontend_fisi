@@ -28,7 +28,6 @@ public class RequestMH extends AppCompatActivity {
     private ProgressBar loadingPB;
 
     private static final String TAG = "SOLICITUD DE HISTORIAL";
-    //public static final String BASE_URL = "https://reqres.in/api/";
     public static final String BASE_URL = "https://clinicauniversitaria.herokuapp.com/api/";
 
     @Override
@@ -52,7 +51,6 @@ public class RequestMH extends AppCompatActivity {
                     Toast.makeText(RequestMH.this, "Ingrese los campos, por favor.", Toast.LENGTH_SHORT).show();
                     return;
                 }
-
                 sendRequestHMToAPI(edtnombre.getText().toString(), edtapellidos.getText().toString(), edtdni.getText().toString(), edtcorreo.getText().toString());
             }
         });
