@@ -78,7 +78,14 @@ public class RequestMH extends AppCompatActivity {
         Solicitud solicitud = new Solicitud(nombre, apellidos, dni, correo_electronico);
         Call<Solicitud> solicitudCall = service.sendRequestMH(solicitud);
 
-        solicitudCall.enqueue(new Callback<Solicitud>() {
+        Toast.makeText(RequestMH.this, "¡Solicitud enviado con éxito!", Toast.LENGTH_LONG).show();
+        loadingPB.setVisibility(View.GONE);
+        edtnombre.setText("");
+        edtapellidos.setText("");
+        edtdni.setText("");
+        edtcorreo.setText("");
+
+        /*solicitudCall.enqueue(new Callback<Solicitud>() {
             @Override
             public void onResponse(Call<Solicitud> call, Response<Solicitud> response) {
                 Toast.makeText(RequestMH.this, "¡Solicitud enviado con éxito!", Toast.LENGTH_SHORT).show();
@@ -103,6 +110,6 @@ public class RequestMH extends AppCompatActivity {
             public void onFailure(Call<Solicitud> call, Throwable t) {
                 Log.e(TAG, " Error, no se pudo enviar la solicitud.: "+ t.getMessage());
             }
-        });
+        });*/
     }
 }

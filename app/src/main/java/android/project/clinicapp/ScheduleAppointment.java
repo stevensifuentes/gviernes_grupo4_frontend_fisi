@@ -73,6 +73,7 @@ public class ScheduleAppointment extends AppCompatActivity {
         especialidadesChip = (ChipGroup) findViewById(R.id.especialidadesChipGroup);
         especialidadesChip.setOnCheckedChangeListener((group, checkedId) -> {
             chip = (Chip) especialidadesChip.findViewById(checkedId);
+            Log.i(TAG,"ID"+checkedId );
             especialidad = chip.getText().toString();
             solicitarDataFechas(especialidad);
         });
@@ -82,7 +83,7 @@ public class ScheduleAppointment extends AppCompatActivity {
         fechasChip = (ChipGroup) findViewById(R.id.fechasChipGroup);
         fechasChip.setOnCheckedChangeListener((group, checkedId) -> {
             chip = (Chip) fechasChip.findViewById(checkedId);
-            Log.i("ID", "ID: "+ fechasChip.getCheckedChipIds());
+            Log.i("FECHA", "ID: "+ checkedId);
             fecha = "2022-01-"+chip.getText().subSequence(0, 2).toString();
             solicitarDataHoras(especialidad, fecha);
             // 21 LUN -> "2022-01-"+${};
@@ -93,7 +94,7 @@ public class ScheduleAppointment extends AppCompatActivity {
         horasChip.setOnCheckedChangeListener((group, checkedId) -> {
             chip = (Chip) horasChip.findViewById(checkedId);
             Log.i("ID", "ID: "+checkedId);
-            hora = chip.getText().subSequence(0,4).toString()+":00";
+            hora = chip.getText().subSequence(0,5).toString()+":00";
             //02:00:00
         });
 
@@ -163,7 +164,7 @@ public class ScheduleAppointment extends AppCompatActivity {
     }
 
     public void habilitarFechas(ArrayList<Fecha> listaFechas){
-        int ids[] = {2131362290, 2131362298, 2131362326, 2131362269, 2131362652, 2131362437, 2131362289};
+        int ids[] = {2131362288, 2131362296, 2131362324, 2131362267, 2131362650, 2131362435, 2131362287};
         for (int i=0; i<listaFechas.size(); i++){
             chip = (Chip) fechasChip.findViewById(ids[i]);
             Fecha f = listaFechas.get(i);
@@ -190,7 +191,6 @@ public class ScheduleAppointment extends AppCompatActivity {
                         Hora p = listaHoras.get(i);
                         Log.i(TAG, "Número de hora: " + p.getHora());
                         Log.i(TAG, "Disponible: " + p.getDisponible());
-
                     }
                 } else {
                     Log.e(TAG, " onResponse: " + response.errorBody());
@@ -204,7 +204,11 @@ public class ScheduleAppointment extends AppCompatActivity {
     }
 
     public void habilitarHoras(ArrayList<Hora> listaHoras){
-        int ids[] = {2131362003, 2131362004, 2131362005, 2131362006, 2131362007, 2131362008, 2131362009, 2131362010, 2131362011, 2131362013, 2131362014, 2131362015, 2131362016, 2131362017, 2131362018, 2131362019, 2131362020, 2131362021, 2131362022, 2131362024, 2131362025};
+        int ids[] = {2131362001, 2131362002, 2131362003, 2131362004, 2131362005, 2131362006, 2131362007, 2131362008, 2131362009, 2131362011, 2131362012, 2131362013, 2131362014, 2131362015, 2131362016, 2131362017, 2131362018, 2131362019, 2131362020, 2131362022, 2131362023};
+        /*for (int i=0; i<listaHoras.size(); i++){
+            chip = (Chip) horasChip.findViewById(ids[i]);
+            chip.setChipBackgroundColor(ColorStateList.valueOf(ContextCompat.getColor(this, R.color.design_default_color_background)));
+        }*/
         for (int i=0; i<listaHoras.size(); i++){
             chip = (Chip) horasChip.findViewById(ids[i]);
             Hora h = listaHoras.get(i);

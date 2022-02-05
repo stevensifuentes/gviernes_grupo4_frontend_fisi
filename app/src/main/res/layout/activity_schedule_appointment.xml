@@ -348,21 +348,21 @@
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="9:00 AM " />
+                            android:text="09:00 AM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip02"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="9:20 AM " />
+                            android:text="09:20 AM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip03"
                             style="@style/ChipStyle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="9:40 AM " />
+                            android:text="09:40 AM " />
 
                         <com.google.android.material.chip.Chip
                             android:id="@+id/chip04"

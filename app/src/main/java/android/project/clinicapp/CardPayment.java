@@ -98,6 +98,22 @@ public class CardPayment extends AppCompatActivity {
         fechaFinal = getIntent().getStringExtra("fecha");
         horaFinal = getIntent().getStringExtra("hora");
 
+        payButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Consultamos el monto
+                amountDouble = 15.00;
+                progressDialog.show();
+                startCheckout();
+                cardFormView.clearFocus();
+                Intent inte = new Intent(v.getContext(), APReport.class);
+                inte.putExtra("es", especialidadFinal);
+                inte.putExtra("fe", fechaFinal);
+                inte.putExtra("ho", horaFinal);
+                startActivity(inte);
+            }
+        });
+
         // Inicializamos librería retrofit
         retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
@@ -112,16 +128,6 @@ public class CardPayment extends AppCompatActivity {
                 Objects.requireNonNull("pk_test_51KMwfOLFRd7vEr3MUZw9H01MvZ4DUXKa4dm2sIAsPr8wMe3RU4z5HXuCekRcEidOEJqHWF7h1yWV8m94wPr5zpe2000Ib8mmue")
         );
 
-        payButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Consultamos el monto
-                amountDouble = 15.00;
-                progressDialog.show();
-                startCheckout();
-                cardFormView.clearFocus();
-            }
-        });
     }
 
     private void startCheckout() {
@@ -242,7 +248,7 @@ public class CardPayment extends AppCompatActivity {
             if (status == PaymentIntent.Status.Succeeded) {
                 // Payment completed successfully
                 Gson gson = new GsonBuilder().setPrettyPrinting().create();
-                Toast.makeText(CardPayment.this, "Pago realizado con éxito\nSu cita ha sido programada", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CardPayment.this, "Pago realizado con éxito\nSu cita ha sido programada", Toast.LENGTH_LONG).show();
                 sendAppointmentToAPI(especialidadFinal, fechaFinal, horaFinal, 1);
                 //toast.setGravity(Gravity.CENTER, 0, 0);
                 //toast.show();
@@ -284,10 +290,9 @@ public class CardPayment extends AppCompatActivity {
 
         // Instanciamos la cita
         CitaProgramada cita = new CitaProgramada(especialidad, fecha, hora, historialId);
-
         retrofit2.Call<CitaProgramada> citaProgramadaCall = service.saveAppointments(cita);
 
-        citaProgramadaCall.enqueue(new retrofit2.Callback<CitaProgramada>() {
+        /*citaProgramadaCall.enqueue(new retrofit2.Callback<CitaProgramada>() {
             @Override
             public void onResponse(retrofit2.Call<CitaProgramada> call, retrofit2.Response<CitaProgramada> response) {
                 CitaProgramada responseFromAPI = response.body();
@@ -304,6 +309,6 @@ public class CardPayment extends AppCompatActivity {
             public void onFailure(retrofit2.Call<CitaProgramada> call, Throwable t) {
                 Log.e(TAG, " Error, no se pudo guardar la cita: "+ t.getMessage());
             }
-        });
+        });*/
     }
 }

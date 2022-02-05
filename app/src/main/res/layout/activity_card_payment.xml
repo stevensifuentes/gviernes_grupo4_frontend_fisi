@@ -13,6 +13,7 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
+
         <ImageView
             android:id="@+id/imgHeader"
             android:layout_width="match_parent"
@@ -29,7 +30,10 @@
             android:id="@+id/iconBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:background="#00FFFFFF"
             android:minWidth="48dp"
             android:minHeight="48dp"
@@ -42,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/imgHeader"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="80dp" />
+            android:layout_marginTop="60dp" />
 
         <Button
             android:id="@+id/btnPagar"
@@ -54,7 +58,7 @@
             android:layout_alignParentBottom="true"
             android:layout_marginStart="94dp"
             android:layout_marginEnd="94dp"
-            android:layout_marginBottom="88dp"
+            android:layout_marginBottom="70dp"
             android:layout_toStartOf="@id/cardFormView"
             android:layout_toEndOf="@id/cardFormView"
             android:background="@drawable/bordes_redondos"
@@ -63,5 +67,22 @@
             android:textSize="16dp"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintVertical_bias="0.848" />
+
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="412dp"
+            android:layout_height="150dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@color/disabled"
+            android:fontFamily="@font/poller_one"
+            android:gravity="center_horizontal"
+            android:padding="5dp"
+            android:text="Pay Appointment"
+            android:textColor="@color/white"
+            android:textSize="50dp" />
+
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

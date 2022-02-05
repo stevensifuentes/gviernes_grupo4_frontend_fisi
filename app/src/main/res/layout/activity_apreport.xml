@@ -8,18 +8,6 @@
     tools:layout_editor_absoluteX="0dp"
     tools:layout_editor_absoluteY="0dp">
 
-    <ImageButton
-        android:id="@+id/btnBackAP"
-        android:layout_width="55dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#00FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back"
-        tools:ignore="SpeakableTextPresentCheck" />
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="163dp"
@@ -53,193 +41,247 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/estetoscopio" />
 
-    <TextView
-        android:id="@+id/txtPaciente2"
+    <LinearLayout
+        android:id="@+id/contentOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/coda"
-        android:text="Paciente"
-        android:textColor="#7C7676"
-        android:textSize="20sp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        android:gravity="center_horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textmsg2" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
 
-    <AutoCompleteTextView
-        android:id="@+id/paciente2"
-        android:layout_width="121dp"
+        <TextView
+            android:id="@+id/textmsg2"
+            android:layout_width="242dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/aclonica"
+            android:text="¡Cita realizada con éxito!"
+            android:textAlignment="center"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/txtPaciente2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/coda"
+            android:text="Paciente"
+            android:textColor="#7C7676"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textmsg2" />
+
+        <TextView
+            android:id="@+id/paciente2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/poppins_light"
+            android:text="Cody Fisher"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPaciente2" />
+
+        <TextView
+            android:id="@+id/txtDoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:fontFamily="@font/coda"
+            android:text="Doctor"
+            android:paddingTop="10dp"
+            android:textColor="#7C7676"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/paciente2" />
+
+        <TextView
+            android:id="@+id/doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_light"
+            android:textSize="20dp"
+            android:text="Carlos Gutierrez"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDoctor" />
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:fontFamily="@font/poppins_light"
-        android:text="Cody Fisher"
-        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPaciente2" />
+        app:layout_constraintTop_toBottomOf="@+id/contentOne"
+        tools:ignore="MissingConstraints">
 
-    <AutoCompleteTextView
-        android:id="@+id/doctor"
-        android:layout_width="157dp"
-        android:layout_height="58dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:fontFamily="@font/poppins_light"
-        android:text="Carlos Gutierrez"
-        android:textAlignment="center"
+        <LinearLayout
+            android:id="@+id/contentEspecializacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtEspecialidad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/coda"
+                android:text="Especialidad"
+                android:textColor="#7C7676"
+                android:textSize="20sp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/especialidadAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/poppins_light"
+                android:text="Medicina"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/contentHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@id/contentEspecializacion"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtHora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:fontFamily="@font/coda"
+                android:text="Hora"
+                android:textColor="#7C7676"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.488"
+                app:layout_constraintStart_toEndOf="@+id/txtFecha2" />
+
+            <TextView
+                android:id="@+id/horaAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="14:20:00"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDoctor" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
 
-    <TextView
-        android:id="@+id/txtDoctor"
+        <LinearLayout
+            android:id="@+id/contentFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/txtFecha2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/coda"
+                android:text="Fecha"
+                android:textColor="#7C7676"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/fechaAP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="14-04-2021"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/contentLugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@id/contentFecha"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtPlace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/coda"
+                android:text="Lugar"
+                android:textColor="#7C7676"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/place"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_light"
+                android:text="Clínica Universitaria"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:fontFamily="@font/coda"
-        android:text="Doctor"
-        android:textColor="#7C7676"
-        android:textSize="20sp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/paciente2" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2">
 
-    <TextView
-        android:id="@+id/txtID2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/coda"
-        android:text="ID"
-        android:textColor="#7C7676"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/idreport"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/txtID2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/coda"
+            android:text="ID"
+            android:textColor="#7C7676"
+            android:textSize="20sp" />
 
-    <AutoCompleteTextView
-        android:id="@+id/idreport"
-        android:layout_width="52dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="4dp"
-        android:fontFamily="@font/poppins_light"
-        android:text="222"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/iconQR2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/txtEspecialidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/coda"
-        android:text="Especialidad"
-        android:textColor="#7C7676"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.271"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="313dp" />
-
-    <AutoCompleteTextView
-        android:id="@+id/especialidad"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_light"
-        android:text="Medicina"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.286"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEspecialidad" />
-
-    <AutoCompleteTextView
-        android:id="@+id/fechaDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_light"
-        android:text="14/04/2021"
-        app:layout_constraintBottom_toTopOf="@+id/esteto2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.198"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtFecha2"
-        app:layout_constraintVertical_bias="0.016" />
-
-    <TextView
-        android:id="@+id/txtPlace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="300dp"
-        android:fontFamily="@font/coda"
-        android:text="Lugar"
-        android:textColor="#7C7676"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toEndOf="@+id/txtFecha2" />
-
-    <AutoCompleteTextView
-        android:id="@+id/place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_light"
-        android:text="Clínica Universitaria"
-        app:layout_constraintBottom_toTopOf="@+id/esteto2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.811"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPlace"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/txtFecha2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="172dp"
-        android:fontFamily="@font/coda"
-        android:text="Fecha"
-        android:textColor="#7C7676"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/esteto2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <AutoCompleteTextView
-        android:id="@+id/turn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_light"
-        android:text="Mañana"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.697"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTurn" />
-
-    <TextView
-        android:id="@+id/txtTurn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/coda"
-        android:text="Turno"
-        android:textColor="#7C7676"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
-        app:layout_constraintStart_toEndOf="@+id/txtFecha2"
-        tools:layout_editor_absoluteY="313dp" />
+        <TextView
+            android:id="@+id/idreport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="222"
+            android:textSize="20sp"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/iconQR2"
@@ -252,25 +294,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
         app:srcCompat="@drawable/qr" />
-
-    <TextView
-        android:id="@+id/textmsg2"
-        android:layout_width="242dp"
-        android:layout_height="47dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="72dp"
-
-        android:fontFamily="@font/aclonica"
-        android:text="¡Cita realizada con éxito!"
-        android:textAlignment="center"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgLine"
@@ -282,4 +307,15 @@
         app:layout_constraintTop_toBottomOf="@+id/iconQR2"
         app:srcCompat="@drawable/linea" />
 
+    <ImageButton
+        android:id="@+id/btnBackAP"
+        android:layout_width="55dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
